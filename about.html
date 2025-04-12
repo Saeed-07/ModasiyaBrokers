@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Modasiya Brokers | Our Story & Agricultural Expertise</title>
+    <meta name="description" content="Learn about Modasiya Brokers' 50+ years of experience connecting agricultural communities across India. Discover our story, mission, values, and dedicated team.">
+    <meta name="keywords" content="Modasiya Brokers history, agricultural brokerage firm, agricultural commodities India, pulses trading experts, agricultural supply chain, Indian agricultural broker">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to About page */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/agricultural_field_wide.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-white);
+            text-align: center;
+            padding: 10rem 0 6rem;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            color: var(--color-white);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
+        
+        .breadcrumbs {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.5s;
+        }
+        
+        .breadcrumbs a, .breadcrumbs span {
+            color: var(--color-white);
+            margin: 0 0.5rem;
+        }
+        
+        .breadcrumbs a:hover {
+            color: var(--color-primary-light);
+        }
+        
+        .about-story {
+            position: relative;
+        }
+        
+        .story-timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%; /* Changed from 0 to 100% to make it display immediately */
+            background-color: var(--color-primary);
+            transform: translateX(-50%);
+            /* Removed animation that was causing issues */
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 5rem;
+            opacity: 1; /* Changed from 0 to 1 to make it visible by default */
+            transform: translateY(0); /* Reset transform to show items */
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 2rem;
+            background-color: var(--color-white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+        
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--color-white);
+            transform: rotate(45deg);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            left: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            right: -10px;
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: 15px;
+            width: 70px;
+            height: 70px;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: var(--weight-bold);
+            z-index: 2;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-year {
+            left: calc(50% + 20px);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-year {
+            right: calc(50% + 20px);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 1; /* Changed from 0 to 1 */
+            transform: translateY(0); /* Reset transform */
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .member-position {
+            color: var(--color-primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            background-color: var(--color-white);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            opacity: 1; /* Changed from 0 to 1 */
+            transform: translateY(0); /* Reset transform */
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-primary);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .value-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .partners-slideshow {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .partners-track {
+            display: flex;
+            position: absolute;
+            width: calc(200px * 12); /* 6 partners × 2 (duplicate for continuous effect) */
+            animation: slideshow 30s linear infinite;
+        }
+
+        .partner-slide {
+            width: 200px;
+            height: 150px;
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-slide:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .partner-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            transition: filter 0.3s ease;
+        }
+
+        /* Added missing keyframes for animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideshow {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-200px * 6)); /* Move back by width of original partners */
+            }
+        }
+        
+        /* Responsive design adjustments */
+        @media screen and (max-width: 992px) {
+            .timeline-item {
+                flex-direction: column !important;
+                align-items: center;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            .timeline-content {
+                width: 80%;
+                margin-top: 3rem;
+            }
+            
+            .timeline-content::after {
+                display: none;
+            }
+            
+            .timeline-year {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%);
+            }
+            
+            .timeline-line {
+                left: 50%;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .values-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .partners-slideshow {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="Modasiya Brokers Logo">
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#" class="btn btn-primary">Get A Quote</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Journey Since 1971</h1>
+            <p>Discover the story of Modasiya Brokers and our mission to revolutionize agricultural commodity trading in India</p>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-mission">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Mission</span>
+                <h2>Bridging Agricultural Communities Across India</h2>
+                <p>From humble beginnings to becoming a nationwide agricultural commodities powerhouse</p>
+            </div>
+            <div class="about-content">
+                <div class="row" style="display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 4rem;">
+                    <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
+                        <h3>Who We Are</h3>
+                        <p>Established in 1971, Modasiya Brokers has grown from a small regional operation to one of India's most trusted agricultural commodities brokerage firms. With over five decades of experience, we have built an extensive network spanning all agricultural zones across the country.</p>
+                        <p>Our deep-rooted connections with farming communities, distributors, and end consumers have positioned us uniquely to understand and fulfill the needs of India's diverse agricultural market.</p>
+                    </div>
+                    <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
+                        <img src="images/agricultural_fields.jpg" alt="Agricultural fields in India" style="border-radius: 12px; box-shadow: 0 10px 15px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+                <div class="row" style="display: flex; flex-wrap: wrap; align-items: center; flex-direction: row-reverse;">
+                    <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
+                        <h3>Our Vision & Mission</h3>
+                        <p>Our vision is to create a sustainable and efficient agricultural ecosystem that benefits every stakeholder in the supply chain. We believe in empowering farmers by providing them fair access to national markets while ensuring consistent quality supplies to consumers and businesses.</p>
+                        <p>Through our brokerage services, we aim to bridge the gap between agricultural producers and consumers, overcoming geographical, informational, and logistical barriers that have traditionally fragmented India's agricultural markets.</p>
+                    </div>
+                    <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
+                        <img src="images/farmer_field.jpg" alt="Indian farmer in agricultural field" style="border-radius: 12px; box-shadow: 0 10px 15px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-story" style="background-color: var(--color-gray-100); padding: 5rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Story</span>
+                <h2>Five Decades of Agricultural Excellence</h2>
+                <p>Milestones that have shaped our journey in revolutionizing India's agricultural commodity trading</p>
+            </div>
+            <div class="story-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item" id="timeline-1">
+                    <div class="timeline-year">1971</div>
+                    <div class="timeline-content">
+                        <h3>Humble Beginnings</h3>
+                        <p>Founded by Mr. Saeed Ahmed in Himmatnagar, Gujarat as a small local broker connecting regional farmers with nearby markets, focusing initially on pulses trading.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" id="timeline-2">
+                    <div class="timeline-year">1985</div>
+                    <div class="timeline-content">
+                        <h3>Regional Expansion</h3>
+                        <p>Expanded operations throughout Gujarat and neighboring states, establishing our first warehouse facilities and quality testing protocols to ensure consistent product standards.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" id="timeline-3">
+                    <div class="timeline-year">1998</div>
+                    <div class="timeline-content">
+                        <h3>Diversification</h3>
+                        <p>Broadened our product portfolio to include grain seeds and cattle feed, becoming a comprehensive agricultural commodities broker catering to diverse farming needs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" id="timeline-4">
+                    <div class="timeline-year">2007</div>
+                    <div class="timeline-content">
+                        <h3>National Presence</h3>
+                        <p>Established offices in major agricultural hubs across India, creating a nationwide network that connects farmers from every region with national and international markets.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" id="timeline-5">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h3>Digital Transformation</h3>
+                        <p>Embraced technology to create digital platforms for market intelligence, price forecasting, and streamlined logistics, bringing transparency and efficiency to agricultural trading.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" id="timeline-6">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h3>Future Forward</h3>
+                        <p>Today, with 5000+ farmers in our network and partnerships with major agricultural businesses, we continue to innovate and expand our services while staying true to our founding principles of integrity, quality, and fair trade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-values">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Values</span>
+                <h2>Principles That Guide Us</h2>
+                <p>The core values that have sustained our growth and earned the trust of agricultural communities</p>
+            </div>
+            <div class="values-container">
+                <div class="value-card" id="value-1">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Trust & Integrity</h3>
+                    <p>We build lasting relationships based on transparency, honesty, and reliability. Our word is our bond in every transaction and partnership.</p>
+                </div>
+                
+                <div class="value-card" id="value-2">
+                    <div class="value-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>We maintain rigorous quality control standards across our entire supply chain, ensuring consistent premium products for all our customers.</p>
+                </div>
+                
+                <div class="value-card" id="value-3">
+                    <div class="value-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Fair Trade Practices</h3>
+                    <p>We believe in equitable compensation for farmers and fair pricing for consumers, creating a balanced agricultural ecosystem that benefits all.</p>
+                </div>
+                
+                <div class="value-card" id="value-4">
+                    <div class="value-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We promote environmentally responsible farming practices and sustainable supply chain operations to protect our natural resources for future generations.</p>
+                </div>
+                
+                <div class="value-card" id="value-5">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We continuously seek new technologies and methodologies to improve agricultural productivity, efficiency, and market access.</p>
+                </div>
+                
+                <div class="value-card" id="value-6">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Building</h3>
+                    <p>We invest in the agricultural communities we serve, providing education, resources, and support to help rural India thrive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-team" style="background-color: var(--color-gray-100); padding: 5rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Leadership</span>
+                <h2>Meet the Team Behind Our Success</h2>
+                <p>Experienced professionals with deep roots in Indian agriculture</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member" id="team-1">
+                    <div class="member-image">
+                        <img src="images/team-1.jpg" alt="Rajesh Modasiya - CEO">
+                    </div>
+                    <div class="member-info">
+                        <h3>Rajesh Modasiya</h3>
+                        <span class="member-position">Chief Executive Officer</span>
+                        <p>Second-generation leader with 25+ years of experience in agricultural trading and supply chain management.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member" id="team-2">
+                    <div class="member-image">
+                        <img src="images/team-2.jpg" alt="Vikram Singh - Head of Supply Chain">
+                    </div>
+                    <div class="member-info">
+                        <h3>Vikram Singh</h3>
+                        <span class="member-position">Head of Supply Chain</span>
+                        <p>Logistics expert who has revolutionized our distribution network to reach every corner of India efficiently.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member" id="team-3">
+                    <div class="member-image">
+                        <img src="images/team-3.jpg" alt="Raj Sharma - Quality Assurance Director">
+                    </div>
+                    <div class="member-info">
+                        <h3>Raj Sharma</h3>
+                        <span class="member-position">Quality Assurance Director</span>
+                        <p>Food scientist specializing in agricultural product quality standards and certification processes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-partners">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Partners</span>
+                <h2>Growing Together With Industry Leaders</h2>
+                <p>Trusted partnerships that strengthen our agricultural ecosystem</p>
+            </div>
+            <div class="partners-slideshow">
+                <div class="partners-track">
+                    <!-- Original 6 partners -->
+                    <div class="partner-slide">
+                        <img src="images/logo-1.jpg" alt="Agricultural Corporation Partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="images/logo-2.jpg" alt="Food Processing Partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="images/logo-3.jpg" alt="Dairy Industry Partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="images/logo-4.jpg" alt="Seed Production Partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="images/logo-5.jpg" alt="Logistics Partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="images/logo-6.jpg" alt="Agricultural Research Partner">
+                    </div>
+                    
+                    <!-- Duplicate partners to create continuous effect -->
+                    <div class="partner-slide">
+                        <img src="images/logo-1.jpg" alt="Agricultural Corporation Partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="images/logo-2.jpg" alt="Food Processing Partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="images/logo-3.jpg" alt="Dairy Industry Partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="images/logo-4.jpg" alt="Seed Production Partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="images/logo-5.jpg" alt="Logistics Partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="images/logo-6.jpg" alt="Agricultural Research Partner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Want to Join Our Agricultural Network?</h2>
+                <p>Connect with us to explore partnership opportunities and discover how we can grow together</p>
+                <form class="cta-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit" class="btn btn-primary">Contact Our Team</button>
+                </form>
+                <div class="cta-contact">
+                    <span>Or call us directly at:</span>
+                    <a href="tel:+918023456789" class="phone-number">+91 80 2345 6789</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Modasiya Brokers Logo">
+                    </div>
+                    <p>Connecting agricultural communities and businesses across India with reliable brokerage services.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#market">Market Insights</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Pulses</a></li>
+                        <li><a href="#">Grain Seeds</a></li>
+                        <li><a href="#">Cattle Feed</a></li>
+                        <li><a href="#">Organic Products</a></li>
+                        <li><a href="#">Specialty Items</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Information</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> A/18, New Market Yard, Himmatnagar - 383001, Sabarkantha, Gujarat</li>
+                        <li><i class="fas fa-phone-alt"></i> 09429983375</li>
+                        <li><i class="fas fa-envelope"></i> info@modasiyabrokers.com</li>
+                        <li><i class="fas fa-clock"></i> Monday - Saturday: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Navigation Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            if (!targetId) return;
+            
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - headerHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Add active class to current page navigation link
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Form submission handling
+    const ctaForm = document.querySelector('.cta-form');
+    if (ctaForm) {
+        ctaForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get email value
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
+            
+            if (!email) {
+                alert('Please enter your email address.');
+                return;
+            }
+            
+            // Here you would typically send the data to your server
+            // For demonstration purposes, we'll just show a success message
+            alert('Thank you for your interest! Our team will contact you shortly.');
+            emailInput.value = '';
+        });
+    }
+    
+    // Add animation for timeline and value cards when they come into view
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe timeline items
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        observer.observe(item);
+    });
+    
+    // Observe value cards
+    document.querySelectorAll('.value-card').forEach(card => {
+        observer.observe(card);
+    });
+    
+    // Observe team members
+    document.querySelectorAll('.team-member').forEach(member => {
+        observer.observe(member);
+    });
+});
+</script>
+</body>
+</html>
